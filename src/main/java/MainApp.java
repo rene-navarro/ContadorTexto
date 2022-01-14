@@ -27,16 +27,16 @@ public class MainApp {
 
         String textLine = null;
         int contador = 0;
-        while (true) {
-            try {
-                if (!((textLine = in.readLine()) != null))
-                    break;
-            } catch (IOException e) {
-                System.out.println("Error al leer el archivo de entrada");
-                System.exit(3);
+
+        try {
+            while ((textLine = in.readLine()) != null) {
+                contador++;
             }
-            contador++;
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo de entrada");
+            System.exit(3);
         }
+
 
         try {
             in.close();
