@@ -44,6 +44,7 @@ public class WordCounter {
                 e.printStackTrace();
             }
         }
+        // tiempo de procesamiento
         long time = System.currentTimeMillis() - start;
 
         System.out.printf("El archivo %s tiene %,8d palabras. " , fileName, contadorPalabras );
