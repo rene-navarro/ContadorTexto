@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class WordCounter {
+public class WordCounterUnbuffered {
     public static void main(String args[]) {
 
         if (args.length == 0) {
@@ -19,9 +19,7 @@ public class WordCounter {
             System.exit(2);
         }
 
-       BufferedReader in = new BufferedReader(fileReader);
-
-        StreamTokenizer st = new StreamTokenizer(in);
+        StreamTokenizer st = new StreamTokenizer(fileReader);
 
         String textLine = null;
         int contadorPalabras = 0;
@@ -41,7 +39,7 @@ public class WordCounter {
             System.exit(3);
         } finally {
             try {
-                in.close();
+                fileReader.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
